@@ -8,8 +8,8 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
+    # <p>(apparently not me) </p>
   more_info: >
-    <p>(apparently not me) </p>
     <p>Jiayibing Building </p>
     <p>No.5 Yiheyuan Road, Haidian District,</p>
     <p>Beijing 100871, P.R.China</p>
