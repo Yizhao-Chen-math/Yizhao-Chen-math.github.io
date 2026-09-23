@@ -342,6 +342,16 @@ ninja.data = [{
           description: "From Mar. 2026 to Jun. 2026(as teaching assistant)",
           section: "Teaching",handler: () => {
               window.location.href = "/teaching/2026-spring-Advanced-Mathematics-A-II/";
+            },},{id: "teaching-advanced-mathematics-a-i",
+          title: 'Advanced Mathematics A(I)',
+          description: "From Sept. 2026 to Dec. 2026(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2026-autumn-Advanced-Mathematics-A-I-copy/";
+            },},{id: "teaching-lecture-note-for-recitation-session",
+          title: 'Lecture Note for Recitation Session',
+          description: "Collection of my lecture note for the recitation session of the course Advanced Mathematics.",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/Lecture-Note-for-Recitation-Session/";
             },},{
         id: 'social-email',
         title: 'email',
