@@ -53,7 +53,7 @@ desktop navigation.
 
 ## Validation
 
-With Ruby 3.3.5, Bundler 4.0.6, Node 22 and Python available:
+With Ruby 3.3.13, Bundler 4.0.6, Node 22 and Python available:
 
 ```bash
 bundle install
@@ -75,6 +75,9 @@ The upstream upgrade auditor reports 43 non-blocking `legacy_jquery_usage`
 warnings. Each points to mathematical `$(` notation in existing Markdown, not
 JavaScript. All were reviewed; no mathematical content was rewritten to silence
 them. Blocking findings: zero. Unacknowledged overrides: zero.
+
+The initial GitHub run found that Ubuntu 26.04 no longer offers Ruby 3.3.5.
+The workflow and Docker runtime use the supported 3.3.13 patch release instead.
 
 ## Branch validation and publishing
 

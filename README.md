@@ -22,7 +22,7 @@ Docker provides the local Ruby/Python environment:
 docker compose up --build
 ```
 
-Open <http://localhost:8080/>. For a native environment, use Ruby 3.3.5 and
+Open <http://localhost:8080/>. For a native environment, use Ruby 3.3.13 and
 Bundler 4.0.6, install `Gemfile` and `requirements.txt`, then run
 `bundle exec jekyll serve`.
 
