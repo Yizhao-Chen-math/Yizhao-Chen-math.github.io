@@ -8,11 +8,11 @@ cv:
       - institution: Peking University
         area: Mathematics
         studyType: PhD
-        end_date: 2029
+        date: 2029
       - institution: Peking University
         area: Mathematics and Applied Mathematics
         studyType: Bachelor's degree
-        end_date: 2024
+        date: 2024
     Languages:
       - name: Chinese
       - name: English

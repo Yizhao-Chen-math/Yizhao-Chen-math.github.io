@@ -24,7 +24,8 @@ dependency on the starter's sample `_teachings` collection or calendar.
 Template social-search links were replaced with the public email already on the
 home page and this repository's GitHub username.
 
-The CV now uses RenderCV YAML. Personal facts already present in the previous CV
+The CV now uses RenderCV YAML, with single education years stored as `date` so
+the v1 renderer displays them without inventing start dates. Personal facts already present in the previous CV
 and home page were carried over; unmodified Einstein example entries were omitted.
 The CV remains outside the navigation. No CV PDF is generated automatically.
 

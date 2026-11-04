@@ -52,6 +52,7 @@ failures << "Teaching entries are not newest first" unless dates == dates.sort.r
 
 cv = Nokogiri::HTML(File.read(File.join(destination, "cv/index.html")))
 failures << "CV did not render personal education" unless cv.text.include?("Peking University")
+failures << "CV education years were lost during migration" unless cv.text.include?("2029") && cv.text.include?("2024")
 failures << "CV still contains template example people" if cv.text.include?("Albert Einstein")
 
 math_post = File.join(destination, "blog/2026/Spin-Representation-and-Fermions/index.html")
