@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: [Deploy site]
     types: [completed]
+    branches: [main]
 
 jobs:
   check-links-on-site:
@@ -17,7 +18,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2.2"
+          ruby-version: "3.3.13"
           bundler-cache: true
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main

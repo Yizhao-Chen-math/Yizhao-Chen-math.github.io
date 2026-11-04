@@ -8,60 +8,15 @@ nav_order: 3
 display_categories:
 horizontal: true
 ---
-<!-- 基本照抄project.md，唯一的差别是将collection中元素的排序顺序调整了一下，此外在config.yml中添加了enable_teaching_categories -->
 
-<div class="teaching">
+{% assign sorted_courses = site.teaching | sort: 'date' | reverse %}
+
 {% if site.enable_teaching_categories and page.display_categories %}
-  <!-- Display categorized classes -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_teaching = site.teaching | where: "category", category %}
-  {% assign sorted_courses = categorized_teaching | sort: "date" | reverse %}
-  <!-- Generate cards for each class -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_courses %}
-      {% include projects_horizontal.liquid %}
-      <!-- projects_horizontal.liquid能用 -->
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_courses %}
-      {% include projects.liquid %}
-      <!-- projects.liquid能用，但需要将变量course传递到变量project上 -->
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
-
+{% for category in page.display_categories %}
+<h2 id="{{ category | slugify }}">{{ category | escape }}</h2>
+{% assign categorized_courses = sorted_courses | where: 'category', category %}
+{% include teaching_cards.liquid courses=categorized_courses %}
+{% endfor %}
 {% else %}
-
-<!-- Display projects without categories -->
-
-{% assign sorted_courses = site.teaching | sort: "date" | reverse %}
-
-<!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-<div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_courses %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_courses %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
+{% include teaching_cards.liquid courses=sorted_courses %}
 {% endif %}
-</div>
