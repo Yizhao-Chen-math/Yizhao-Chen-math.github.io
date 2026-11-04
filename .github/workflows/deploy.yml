@@ -3,11 +3,17 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - main
+      - update/v1.2
     paths:
       - "assets/**"
       - "_sass/**"
+      - "*.pdf"
+      - "**/*.pdf"
+      - "**/*.rb"
+      - "**/*.yaml"
+      - ".al-folio-overrides.yml"
+      - "test/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -24,18 +30,23 @@ on:
       - "!.github/workflows/lighthouse-badger.yml"
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
+      - "!docs/CONTRIBUTING.md"
+      - "!docs/CUSTOMIZE.md"
+      - "!docs/FAQ.md"
+      - "!docs/INSTALL.md"
       - "!README.md"
   pull_request:
     branches:
-      - master
       - main
     paths:
       - "assets/**"
       - "_sass/**"
+      - "*.pdf"
+      - "**/*.pdf"
+      - "**/*.rb"
+      - "**/*.yaml"
+      - ".al-folio-overrides.yml"
+      - "test/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -52,15 +63,19 @@ on:
       - "!.github/workflows/lighthouse-badger.yml"
       - "!.github/workflows/prettier.yml"
       - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
+      - "!docs/CONTRIBUTING.md"
+      - "!docs/CUSTOMIZE.md"
+      - "!docs/FAQ.md"
+      - "!docs/INSTALL.md"
       - "!README.md"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -79,8 +94,15 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip" # caching pip dependencies
+      - name: Setup Node 🧰
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - name: Install JS deps 📦
+        run: npm ci
       - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
+        uses: fjogeleit/yaml-update-action@dffe9a5223d84653c13374032382f6bb5de8e5ef # v0.17.0
         with:
           commitChange: false
           valueFile: "_config.yml"
@@ -89,15 +111,25 @@ jobs:
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
+          pip3 install -r requirements.txt
           export JEKYLL_ENV=production
+          bundle exec al-folio upgrade audit
+          bundle exec al-folio upgrade overrides audit
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
         run: |
-          npm install -g purgecss
-          purgecss -c purgecss.config.js
+          npx --no-install purgecss -c purgecss.config.js
+      - name: Check published routes and internal links
+        run: bundle exec ruby test/check_site.rb
+      - name: Upload branch preview and upgrade report
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview-${{ github.run_id }}
+          path: |
+            _site/
+            al-folio-upgrade-report.md
       - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site

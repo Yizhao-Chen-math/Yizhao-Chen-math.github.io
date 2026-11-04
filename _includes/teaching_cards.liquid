@@ -1,0 +1,11 @@
+<div class="teaching-cards{% unless page.horizontal %} teaching-cards--vertical{% endunless %}">
+  {% for course in include.courses %}
+    <a class="teaching-card" href="{{ course.url | relative_url }}" data-course-date="{{ course.date | date: '%Y-%m-%d' }}">
+      {% if course.img %}
+        {% include figure.liquid path=course.img alt=course.title loading="lazy" %}
+      {% endif %}
+      <h3>{{ course.title | escape }}</h3>
+      <p>{{ course.description | escape }}</p>
+    </a>
+  {% endfor %}
+</div>

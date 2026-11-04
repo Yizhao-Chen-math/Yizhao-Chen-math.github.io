@@ -1,0 +1,54 @@
+// Preserve the site's compact blockquotes without copying the core typography.
+blockquote {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+}
+
+// Keep an icon-only search button; core supplies its accessible name.
+#search-toggle .nav-link {
+  font-size: 0;
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+.teaching-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.teaching-card {
+  display: block;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.35rem;
+  background: var(--global-card-bg-color, var(--global-bg-color));
+
+  h3 {
+    margin-top: 0;
+    color: var(--global-theme-color);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--global-theme-color);
+  }
+}
+
+@media (min-width: 768px) {
+  .teaching-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .teaching-cards--vertical {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
