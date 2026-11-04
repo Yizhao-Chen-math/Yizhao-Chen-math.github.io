@@ -1,1 +1,4 @@
-User-agent: * Disallow: Sitemap: https://Yi-zhao-Chen.github.io/sitemap.xml
+User-agent: *
+Disallow:
+
+Sitemap: https://Yizhao-Chen-math.github.io/sitemap.xml

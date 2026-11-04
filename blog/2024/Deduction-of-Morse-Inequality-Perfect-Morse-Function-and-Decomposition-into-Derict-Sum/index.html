@@ -1,5 +1,417 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese) | Yizhao Chen 陈轶钊 </title> <meta name="author" content="Yizhao Chen 陈轶钊"> <meta name="description" content="Some notes when learning Morse theory for the second time."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?e89634aa8709fb03c8ab187827e04de4"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://yi-zhao-chen.github.io/blog/2024/Deduction-of-Morse-Inequality-Perfect-Morse-Function-and-Decomposition-into-Derict-Sum/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese) | Yizhao Chen 陈轶钊 </title> <meta name="author" content="Yizhao Chen 陈轶钊"> <meta name="description" content="Some notes when learning Morse theory for the second time."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?v=e89634aa8709fb03c8ab187827e04de4"> <link rel="apple-touch-icon" href="/assets/img/icon.png?v=e89634aa8709fb03c8ab187827e04de4"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://yizhao-chen-math.github.io/blog/2024/Deduction-of-Morse-Inequality-Perfect-Morse-Function-and-Decomposition-into-Derict-Sum/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yizhao Chen</span> 陈轶钊 </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications&amp;preprints/">Publications &amp; Preprints </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link"> <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese)</h1> <p class="post-meta"> Created in October 20, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> Notes</a> </p> </header> <article class="post-content"> <div id="table-of-contents"> <ul id="toc" class="section-nav"> <li class="toc-entry toc-h2"><a href="#%E6%91%98%E8%A6%81">摘要</a></li> <li class="toc-entry toc-h2"><a href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%B8%BB%E5%AE%9A%E7%90%86">定义与主定理</a></li> <li class="toc-entry toc-h2"> <a href="#%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E">主定理的证明</a> <ul> <li class="toc-entry toc-h3"><a href="#%E6%B3%A8%E8%AE%B0">注记</a></li> </ul> </li> <li class="toc-entry toc-h2"><a href="#%E5%AE%8C%E7%BE%8Emorse%E5%87%BD%E6%95%B0">完美Morse函数</a></li> </ul> </div> <hr> <div id="markdown-content"> <h2 id="摘要">摘要</h2> <p>本文会给出Morse-Bott函数对应的Morse不等式的推导，并由此从代数的角度给出一个Morse-Bott函数是完美的(perfect)的充要条件。我们在推导中假定，下水平集在越过临界点时拓扑上的变化是已经熟知的结论。</p> <h2 id="定义与主定理">定义与主定理</h2> <p>Morse理论的大致想法是：通过空间\(M\)上一个“足够好”的函数\(f\)（这样的函数通常被叫做Morse-Bott函数）的临界点来描述空间\(M\)本身的拓扑性质。具体来说，Morse理论中的空间指的是紧致微分流形；一个函数\(f\)需要满足下面两点才能被叫做“足够好”：</p> <ul> <li>函数\(f\)的临界点集\(C_f\)的每个连通分支\(C_i\)都是一个子流形。</li> <li>函数\(f\)在任意一个临界点\(p \in C_i\)处的“Hessian矩阵”限制在\(C_i\)的法丛上非退化。</li> </ul> <p>我们再引入一些定义。</p> <p>对临界点集的每个联通分支\(C_i\)，将\(f\)在\(C_i\)上的Hessian矩阵的负惯性指数称为\(C_i\)的指标，一般用\(\lambda_{C_i}\)来表示。更进一步，在选定了一个黎曼度量之后，可以定义出\(C_i\)的法丛\(\nu_{C_i}\)，根据\(f\)的Hessian矩阵的特征值的正负，我们可以将法丛\(\nu_{C_i}\)进一步分解成两部分：</p> \[\nu_{C_i} = \nu_{C_i}^+ \oplus \nu_{C_i}^-\] <p>并用\(\theta^{\pm}\)表示由\(\nu_{C_i}^{\pm}\)的定向给出的纤维丛。</p> <p>对于任意一个拓扑空间\(X\)和主理想整环\(R\)，我们可以定义一个无穷形式幂级数\(P_t(X; R) \in \mathbb{Z}[[t]]\)，它的\(k\)次项系数正好是第\(k\)个\(R\)系数约化奇异上同调群关于\(R\)的秩，也就是</p> \[P_t(X; R) = \sum_{k \geq 0}\mathrm{rank}_R\left(H^k(X; R)\right)\cdot t^k\] <p>这个多项式被称作空间\(X\)的Poincaré多项式。我们后面只会使用到\(R\)为整数环\(\mathbb{Z}\)或\(\mathbb{Q}\)的某个扩域的情形。在不引发歧义的情况下，我们会将Poincaré多项式简记为\(P_t(X)\). 在此基础上，我们可以定义一个Morse-Bott函数\(f\)的Morse多项式</p> \[\mathfrak{M}_t(f; R) := \sum_{C_i} t^{\lambda_{C_i}}P_t(C_i; \theta^-\otimes R)\] <p>这里的求和是对临界点集\(C_f\)的全体连通分支\(C_i\)求和。</p> <p>在这些定义的基础上，我们可以陈述Morse理论的一个主要结果：</p> <blockquote> <p>对紧致流形\(M\)和其上的Morse-Bott函数\(f\)，如果设\(f\)的临界点的连通分支为\(C_1, C_2, \dots, C_N\)，那么存在一个以非负整数为系数的无穷形式幂级数\(R(t)\)，使得\(f\)的Morse多项式和\(M\)的Poincaré多项式的差正好是\((1+t)R(t)\)，也就是</p> \[\mathfrak{M}_t(f;R)-P_t(M; R) = (1+t)R(t)\] <p>这里\(R\)是整数环\(\mathbb{Z}\)或有理数域\(\mathbb{Q}\)的扩域。</p> </blockquote> <p>这被称作Morse不等式，是本文的主定理。</p> <h2 id="主定理的证明">主定理的证明</h2> <p>为了后面叙述的方便，我们再引入一些定义。</p> <p>对于一个函数\(f: M \rightarrow \mathbb{R}\)，将集合\(f^{-1}(-\infty, a)\)称作\(f\)的下水平集，记作\(M^a\).</p> <p>我们的证明需要用到下面的引理：</p> <blockquote> <p>对紧致流形\(M\)和其上的Morse-Bott函数\(f\)：</p> <p>(1)如果\(f\)在\([a, b]\)中无临界值，那么\(M^b\)与\(M^a\)同伦等价。</p> <p>(2) 如果\(f\)在区间\([a, b]\)的临界值只有\(c_0 \in (a, b)\)，设\(C\)是取值为\(c_0\)的那些临界点，那么有空间的同伦等价：</p> \[M^b \sim M^a \cup_{\phi} \nu_{C}^-\] <p>这里\(\phi: \partial \nu_{C}^- \rightarrow M^a\)是一个光滑映射。</p> </blockquote> <p>我们略去引理的证明。</p> <p>因为流形是紧致的，所以我们可以构造一列下水平集</p> \[\emptyset \subset \cdots \subset M^{a} \subset M^{b} \subset M^c \subset \cdots \subset M\] <p>使得任何两个相邻下水平集之间只有一个\(f\)的临界值。我们希望对这一列下水平集归纳地证明</p> \[\mathfrak{M}_t(f\vert _{M^a};R)-P_t(M^a; R) = (1+t)R_a(t)\] <p>其中\(f\vert _{M^a}\)表示\(f\)在\(M^a\)上的限制。归纳的奠基是容易的，我们主要看如何从\(M^a\)上的等式到\(M^b\)上的等式。</p> <p>对两个相邻的下水平集\(M^a \subset M^b\)，设其间的临界点集为\(C\). 通过对\(f\)作微扰，我们可以不妨假定\(C\)是连通的。为了展示证明的主要想法，我们进一步假设\(\nu_C^-\)是可定向向量丛。这一节最后的注记解释了处理不可定向的情况的方法。</p> <p>首先，空间对\((M^b, M^a)\)诱导了长正合列：</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^k(M^b, M^a) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>利用引理以及Thom同构，我们知道\(H^k(M^b, M^a)\)和\(H^{k-\lambda_C}(C)\)同构。因此上面的长正合列变成了：</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>我们来看长正合列中的每个映射，它们给出了一系列短正合列：</p> \[0 \rightarrow \ker i^*_k \rightarrow H^k(M^b) \rightarrow \mathrm{im}\ i^*_k \rightarrow 0\] \[0 \rightarrow \ker q^*_k \rightarrow H^{k-\lambda_C}(C) \rightarrow \mathrm{im}\ q^*_k \rightarrow 0\] \[0 \rightarrow \ker \delta^*_k \rightarrow H^k(M^a) \rightarrow \mathrm{im}\ \delta^*_k \rightarrow 0 \\\] <p>进而可以得到等式：</p> \[\begin{matrix} \mathrm{rank}\left(\ker i^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ i^*_k \right) &amp;=&amp; \mathrm{rank}\left(H^k(M^b) \right) \\ \mathrm{rank}\left(H^{k-\lambda_C}(C) \right) &amp;=&amp;\mathrm{rank}\left(\ker q^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ q^*_k\right) \\ \mathrm{rank}\left(H^k(M^a) \right) &amp;=&amp; \mathrm{rank}\left(\ker \delta^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) \\ \end{matrix}\] <p>将上面三个等式相加，并利用长正合列将所有的“\(\ker\)”都替换为“\(\mathrm{im}\)”后得到：</p> \[\begin{aligned} &amp;\mathrm{rank}\left(H^{k - \lambda_C}(C) \right) - \Bigl(\mathrm{rank}\left(H^k(M^b) \right) - \mathrm{rank}\left(H^k(M^a) \right) \Bigr) \\ &amp; =\mathrm{rank}\left(\mathrm{im}\ \delta^*_{k-1} \right) + \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) \end{aligned}\] <p>在上面的等式两边同时乘以\(t^k\)，并对\(k\)求和就得到：</p> \[t^{\lambda_C} P_t(C)-\left(P_t(M^b) - P_t(M^a)\right) = (1+t)R_C(t)\] <p>其中\(R_C(t) = \sum_{k \geq 0} t^k \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right)\)是一个非负整数系数的形式幂级数。因为\(C\)是\(M^a\)与\(M^b\)之间唯一的临界点集，所以\(t^{\lambda_C}P_t(C)\)就是\(f\vert _{M^b}\)的Morse多项式和\(f\vert _{M^a}\)的Morse多项式的差，进而上面的等式可以写成</p> \[\begin{aligned} &amp;\mathfrak{M}_t(f\vert _{M^b};R)-P_t(M^b; R)\\ &amp; = \bigl(\mathfrak{M}_t(f\vert _{M^a};R)-P_t(M^a; R)\bigr) + (1+t)R_C(t)\\ \end{aligned}\] <p>利用这一等式，我们可以很轻松地完成归纳。</p> <h3 id="注记">注记</h3> <p>有读者会注意到，我们在定义Morse多项式时，用到了向量丛\(\nu_C^-\)的定向丛\(\theta^-\)，但证明中却没有出现这一纤维丛，这是因为我们在证明中假定了向量丛\(\nu_C^-\)是可定向的。在不可定向的时候，我们需要用到twisted-Thom同构：</p> \[H^*(\nu_C^-, \partial \nu_C^-; R) \cong H^{* - \lambda_C}(C; \theta^- \otimes R)\] <p>这时候就会出现\(\nu_C^-\)的定向丛\(\theta^-\).</p> <p>在系数环\(R\)是实数域\(\mathbb{R}\)的时候，可以在Bott和Tu所著的书<em>Differential Forms in Algebraic Topology</em>中第一章最后一节找到这一同构的证明。</p> <h2 id="完美morse函数">完美Morse函数</h2> <p>我们称一个Morse-Bott函数\(f: M \rightarrow \mathbb{R}\)是完美的(perfect)，如果它的Morse多项式正好等于\(M\)的Poincaré多项式。</p> <p>根据上面的证明，我们知道，一个Morse-Bott函数\(f\)是完美的当且仅当对每个临界点集\(C\)，我们定义的多项式\(R_C(t)\)等于0. 这可以总结为下面的结论：</p> <blockquote> <p>以下几个命题彼此等价：</p> <p>(1)一个函数\(f: M \rightarrow \mathbb{R}\)是完美的Morse-Bott函数</p> <p>(2)对临界点集的每个连通分支\(C\)和长正合列</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>中的映射\(\delta^*_k\)，有\(\mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) = 0\).</p> <p>(3)对每个\(k\)，上面长正合列中的映射\(\delta^*_k\)的像集由挠元素构成。</p> </blockquote> <p>当上同调的系数环被选取为有理数域\(\mathbb{Q}\)或者它的扩域时，上同调环始终是无挠的，所以我们得到了：</p> <blockquote> <p>在有理数域的扩域中，以下结论彼此等价：</p> <p>(1)一个函数\(f: M \rightarrow \mathbb{R}\)是完美的Morse-Bott函数</p> <p>(2)对临界点集的每个连通分支\(C\)和长正合列</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>中的每个映射\(\delta^*_k\)，它的像是\(0\).</p> <p>(3)上面的长正合列可以分裂为短正合列</p> \[0 \rightarrow H^{*-\lambda_C}(C) \xrightarrow{q^*} H^*(M^b) \xrightarrow{i^*} H^*(M^a) \rightarrow 0\] </blockquote> <p>注意到域系数的短正合列一定是分裂的，所以如果一个Morse函数\(f\)是完美的，下水平集每跨过一个临界点的一个连通分支，我们就能得到一个直和分解</p> \[H^*(M^b) \cong H^{*-\lambda_C}(C)\oplus H^*(M^a)\] <p>进而可以知道，我们有直和分解：</p> \[H^*(M) \cong \bigoplus_{C_i} H^{*-\lambda_{C_i}}(C_i)\] <p>这个等式相当于说，一个流形上的完美的Morse-Bott函数的临界点集几乎确定了这个流形的域系数上同调群。这里使用“几乎”是因为，上面的同构并不是典范的，这个同构依赖于归纳过程中将\(M^a\)的上同调群嵌入到\(M^b\)的上同调群的方式。</p> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf">Writing Operators as Sum of Commutators</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/Spin-Representation-and-Fermions/">Spin Representation and Fermions(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/">Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/">A Little of Galois Theory-How to Solve Equations(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf">Topological Proof of Bézout Theorem</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yizhao Chen 陈轶钊. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yizhao Chen</span> 陈轶钊 </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications&amp;preprints/">Publications &amp; Preprints </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese)</h1> <p class="post-meta"> Created on October 20, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> Notes</a> </p> </header> <article class="post-content"> <div id="table-of-contents"> <ul id="toc" class="section-nav"> <li class="toc-entry toc-h2"><a href="#%E6%91%98%E8%A6%81">摘要</a></li> <li class="toc-entry toc-h2"><a href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%B8%BB%E5%AE%9A%E7%90%86">定义与主定理</a></li> <li class="toc-entry toc-h2"> <a href="#%E4%B8%BB%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E">主定理的证明</a> <ul> <li class="toc-entry toc-h3"><a href="#%E6%B3%A8%E8%AE%B0">注记</a></li> </ul> </li> <li class="toc-entry toc-h2"><a href="#%E5%AE%8C%E7%BE%8Emorse%E5%87%BD%E6%95%B0">完美Morse函数</a></li> </ul> </div> <hr> <div id="markdown-content"> <h2 id="摘要">摘要</h2> <p>本文会给出Morse-Bott函数对应的Morse不等式的推导，并由此从代数的角度给出一个Morse-Bott函数是完美的(perfect)的充要条件。我们在推导中假定，下水平集在越过临界点时拓扑上的变化是已经熟知的结论。</p> <h2 id="定义与主定理">定义与主定理</h2> <p>Morse理论的大致想法是：通过空间\(M\)上一个“足够好”的函数\(f\)（这样的函数通常被叫做Morse-Bott函数）的临界点来描述空间\(M\)本身的拓扑性质。具体来说，Morse理论中的空间指的是紧致微分流形；一个函数\(f\)需要满足下面两点才能被叫做“足够好”：</p> <ul> <li>函数\(f\)的临界点集\(C_f\)的每个连通分支\(C_i\)都是一个子流形。</li> <li>函数\(f\)在任意一个临界点\(p \in C_i\)处的“Hessian矩阵”限制在\(C_i\)的法丛上非退化。</li> </ul> <p>我们再引入一些定义。</p> <p>对临界点集的每个联通分支\(C_i\)，将\(f\)在\(C_i\)上的Hessian矩阵的负惯性指数称为\(C_i\)的指标，一般用\(\lambda_{C_i}\)来表示。更进一步，在选定了一个黎曼度量之后，可以定义出\(C_i\)的法丛\(\nu_{C_i}\)，根据\(f\)的Hessian矩阵的特征值的正负，我们可以将法丛\(\nu_{C_i}\)进一步分解成两部分：</p> \[\nu_{C_i} = \nu_{C_i}^+ \oplus \nu_{C_i}^-\] <p>并用\(\theta^{\pm}\)表示由\(\nu_{C_i}^{\pm}\)的定向给出的纤维丛。</p> <p>对于任意一个拓扑空间\(X\)和主理想整环\(R\)，我们可以定义一个无穷形式幂级数\(P_t(X; R) \in \mathbb{Z}[[t]]\)，它的\(k\)次项系数正好是第\(k\)个\(R\)系数约化奇异上同调群关于\(R\)的秩，也就是</p> \[P_t(X; R) = \sum_{k \geq 0}\mathrm{rank}_R\left(H^k(X; R)\right)\cdot t^k\] <p>这个多项式被称作空间\(X\)的Poincaré多项式。我们后面只会使用到\(R\)为整数环\(\mathbb{Z}\)或\(\mathbb{Q}\)的某个扩域的情形。在不引发歧义的情况下，我们会将Poincaré多项式简记为\(P_t(X)\). 在此基础上，我们可以定义一个Morse-Bott函数\(f\)的Morse多项式</p> \[\mathfrak{M}_t(f; R) := \sum_{C_i} t^{\lambda_{C_i}}P_t(C_i; \theta^-\otimes R)\] <p>这里的求和是对临界点集\(C_f\)的全体连通分支\(C_i\)求和。</p> <p>在这些定义的基础上，我们可以陈述Morse理论的一个主要结果：</p> <blockquote> <p>对紧致流形\(M\)和其上的Morse-Bott函数\(f\)，如果设\(f\)的临界点的连通分支为\(C_1, C_2, \dots, C_N\)，那么存在一个以非负整数为系数的无穷形式幂级数\(R(t)\)，使得\(f\)的Morse多项式和\(M\)的Poincaré多项式的差正好是\((1+t)R(t)\)，也就是</p> \[\mathfrak{M}_t(f;R)-P_t(M; R) = (1+t)R(t)\] <p>这里\(R\)是整数环\(\mathbb{Z}\)或有理数域\(\mathbb{Q}\)的扩域。</p> </blockquote> <p>这被称作Morse不等式，是本文的主定理。</p> <h2 id="主定理的证明">主定理的证明</h2> <p>为了后面叙述的方便，我们再引入一些定义。</p> <p>对于一个函数\(f: M \rightarrow \mathbb{R}\)，将集合\(f^{-1}(-\infty, a)\)称作\(f\)的下水平集，记作\(M^a\).</p> <p>我们的证明需要用到下面的引理：</p> <blockquote> <p>对紧致流形\(M\)和其上的Morse-Bott函数\(f\)：</p> <p>(1)如果\(f\)在\([a, b]\)中无临界值，那么\(M^b\)与\(M^a\)同伦等价。</p> <p>(2) 如果\(f\)在区间\([a, b]\)的临界值只有\(c_0 \in (a, b)\)，设\(C\)是取值为\(c_0\)的那些临界点，那么有空间的同伦等价：</p> \[M^b \sim M^a \cup_{\phi} \nu_{C}^-\] <p>这里\(\phi: \partial \nu_{C}^- \rightarrow M^a\)是一个光滑映射。</p> </blockquote> <p>我们略去引理的证明。</p> <p>因为流形是紧致的，所以我们可以构造一列下水平集</p> \[\emptyset \subset \cdots \subset M^{a} \subset M^{b} \subset M^c \subset \cdots \subset M\] <p>使得任何两个相邻下水平集之间只有一个\(f\)的临界值。我们希望对这一列下水平集归纳地证明</p> \[\mathfrak{M}_t(f\vert _{M^a};R)-P_t(M^a; R) = (1+t)R_a(t)\] <p>其中\(f\vert _{M^a}\)表示\(f\)在\(M^a\)上的限制。归纳的奠基是容易的，我们主要看如何从\(M^a\)上的等式到\(M^b\)上的等式。</p> <p>对两个相邻的下水平集\(M^a \subset M^b\)，设其间的临界点集为\(C\). 通过对\(f\)作微扰，我们可以不妨假定\(C\)是连通的。为了展示证明的主要想法，我们进一步假设\(\nu_C^-\)是可定向向量丛。这一节最后的注记解释了处理不可定向的情况的方法。</p> <p>首先，空间对\((M^b, M^a)\)诱导了长正合列：</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^k(M^b, M^a) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>利用引理以及Thom同构，我们知道\(H^k(M^b, M^a)\)和\(H^{k-\lambda_C}(C)\)同构。因此上面的长正合列变成了：</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>我们来看长正合列中的每个映射，它们给出了一系列短正合列：</p> \[0 \rightarrow \ker i^*_k \rightarrow H^k(M^b) \rightarrow \mathrm{im}\ i^*_k \rightarrow 0\] \[0 \rightarrow \ker q^*_k \rightarrow H^{k-\lambda_C}(C) \rightarrow \mathrm{im}\ q^*_k \rightarrow 0\] \[0 \rightarrow \ker \delta^*_k \rightarrow H^k(M^a) \rightarrow \mathrm{im}\ \delta^*_k \rightarrow 0 \\\] <p>进而可以得到等式：</p> \[\begin{matrix} \mathrm{rank}\left(\ker i^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ i^*_k \right) &amp;=&amp; \mathrm{rank}\left(H^k(M^b) \right) \\ \mathrm{rank}\left(H^{k-\lambda_C}(C) \right) &amp;=&amp;\mathrm{rank}\left(\ker q^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ q^*_k\right) \\ \mathrm{rank}\left(H^k(M^a) \right) &amp;=&amp; \mathrm{rank}\left(\ker \delta^*_k \right) + \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) \\ \end{matrix}\] <p>将上面三个等式相加，并利用长正合列将所有的“\(\ker\)”都替换为“\(\mathrm{im}\)”后得到：</p> \[\begin{aligned} &amp;\mathrm{rank}\left(H^{k - \lambda_C}(C) \right) - \Bigl(\mathrm{rank}\left(H^k(M^b) \right) - \mathrm{rank}\left(H^k(M^a) \right) \Bigr) \\ &amp; =\mathrm{rank}\left(\mathrm{im}\ \delta^*_{k-1} \right) + \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) \end{aligned}\] <p>在上面的等式两边同时乘以\(t^k\)，并对\(k\)求和就得到：</p> \[t^{\lambda_C} P_t(C)-\left(P_t(M^b) - P_t(M^a)\right) = (1+t)R_C(t)\] <p>其中\(R_C(t) = \sum_{k \geq 0} t^k \mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right)\)是一个非负整数系数的形式幂级数。因为\(C\)是\(M^a\)与\(M^b\)之间唯一的临界点集，所以\(t^{\lambda_C}P_t(C)\)就是\(f\vert _{M^b}\)的Morse多项式和\(f\vert _{M^a}\)的Morse多项式的差，进而上面的等式可以写成</p> \[\begin{aligned} &amp;\mathfrak{M}_t(f\vert _{M^b};R)-P_t(M^b; R)\\ &amp; = \bigl(\mathfrak{M}_t(f\vert _{M^a};R)-P_t(M^a; R)\bigr) + (1+t)R_C(t)\\ \end{aligned}\] <p>利用这一等式，我们可以很轻松地完成归纳。</p> <h3 id="注记">注记</h3> <p>有读者会注意到，我们在定义Morse多项式时，用到了向量丛\(\nu_C^-\)的定向丛\(\theta^-\)，但证明中却没有出现这一纤维丛，这是因为我们在证明中假定了向量丛\(\nu_C^-\)是可定向的。在不可定向的时候，我们需要用到twisted-Thom同构：</p> \[H^*(\nu_C^-, \partial \nu_C^-; R) \cong H^{* - \lambda_C}(C; \theta^- \otimes R)\] <p>这时候就会出现\(\nu_C^-\)的定向丛\(\theta^-\).</p> <p>在系数环\(R\)是实数域\(\mathbb{R}\)的时候，可以在Bott和Tu所著的书<em>Differential Forms in Algebraic Topology</em>中第一章最后一节找到这一同构的证明。</p> <h2 id="完美morse函数">完美Morse函数</h2> <p>我们称一个Morse-Bott函数\(f: M \rightarrow \mathbb{R}\)是完美的(perfect)，如果它的Morse多项式正好等于\(M\)的Poincaré多项式。</p> <p>根据上面的证明，我们知道，一个Morse-Bott函数\(f\)是完美的当且仅当对每个临界点集\(C\)，我们定义的多项式\(R_C(t)\)等于0. 这可以总结为下面的结论：</p> <blockquote> <p>以下几个命题彼此等价：</p> <p>(1)一个函数\(f: M \rightarrow \mathbb{R}\)是完美的Morse-Bott函数</p> <p>(2)对临界点集的每个连通分支\(C\)和长正合列</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>中的映射\(\delta^*_k\)，有\(\mathrm{rank}\left(\mathrm{im}\ \delta^*_k \right) = 0\).</p> <p>(3)对每个\(k\)，上面长正合列中的映射\(\delta^*_k\)的像集由挠元素构成。</p> </blockquote> <p>当上同调的系数环被选取为有理数域\(\mathbb{Q}\)或者它的扩域时，上同调环始终是无挠的，所以我们得到了：</p> <blockquote> <p>在有理数域的扩域中，以下结论彼此等价：</p> <p>(1)一个函数\(f: M \rightarrow \mathbb{R}\)是完美的Morse-Bott函数</p> <p>(2)对临界点集的每个连通分支\(C\)和长正合列</p> \[\cdots \xrightarrow{\delta^*_{k-1}} H^{k - \lambda_C}(C) \xrightarrow{q^*_k} H^k(M^b) \xrightarrow{i^*_k} H^k(M^a) \xrightarrow{\delta^*_k} \cdots\] <p>中的每个映射\(\delta^*_k\)，它的像是\(0\).</p> <p>(3)上面的长正合列可以分裂为短正合列</p> \[0 \rightarrow H^{*-\lambda_C}(C) \xrightarrow{q^*} H^*(M^b) \xrightarrow{i^*} H^*(M^a) \rightarrow 0\] </blockquote> <p>注意到域系数的短正合列一定是分裂的，所以如果一个Morse函数\(f\)是完美的，下水平集每跨过一个临界点的一个连通分支，我们就能得到一个直和分解</p> \[H^*(M^b) \cong H^{*-\lambda_C}(C)\oplus H^*(M^a)\] <p>进而可以知道，我们有直和分解：</p> \[H^*(M) \cong \bigoplus_{C_i} H^{*-\lambda_{C_i}}(C_i)\] <p>这个等式相当于说，一个流形上的完美的Morse-Bott函数的临界点集几乎确定了这个流形的域系数上同调群。这里使用“几乎”是因为，上面的同构并不是典范的，这个同构依赖于归纳过程中将\(M^a\)的上同调群嵌入到\(M^b\)的上同调群的方式。</p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf">Writing Operators as Sum of Commutators</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/Spin-Representation-and-Fermions/">Spin Representation and Fermions(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/">Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/">A Little of Galois Theory-How to Solve Equations(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf">Topological Proof of Bézout Theorem</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Non-existence%20of%20Tensor%20Product%20of%20Hilber%20Spaces.pdf">Non-existence of Tensor Product of Hilber Spaces</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/Function-on-Surfaces-With-3-Critical-Points(In-Chinese)/">Function on Surfaces With 3 Critical Points(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/An-Application-of-the-Uniform-Boundedness-Principle-On-the-Continuity-of-Lie-Group's-Representations(In-Chinese)/">An Application of the Uniform Boundedness Principle - On the Continuity of Lie Group's Representations(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82%E8%A7%A3%E8%81%94%E7%BB%9C.pdf">Why Caring About Space of Connections - An Example of Gauge Theories(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/First-Integrals-of-Hamiltonian-Systems-and-Reduction-of-Dimension(In-Chinese)/">First Integrals of Hamiltonian Systems and Reduction of Dimension(In Chinese)</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yizhao Chen 陈轶钊. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 04, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
-  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications-amp-preprints",
+          title: "Publications &amp; Preprints",
+          description: "My publications and preprints are listed below.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications&preprints/";
+          },
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "The following are the courses which I taught or in which I served as a teaching assistant.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "post-writing-operators-as-sum-of-commutators",
+        
+          title: "Writing Operators as Sum of Commutators",
+        
+        description: "A review on Anderson and Vaserstein&#39;s paper.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf";
+          
+        },
+      },{id: "post-spin-representation-and-fermions-in-chinese",
+        
+          title: "Spin Representation and Fermions(In Chinese)",
+        
+        description: "We describe a case where the irreducible representation of Clifford algebras &quot;naturally&quot; appear - the creation and annihilation operators acting on the space of quantum states of many-fermion system.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Spin-Representation-and-Fermions/";
+          
+        },
+      },{id: "post-magnetic-monopole-and-quantization-of-magnetic-charge-in-chinese",
+        
+          title: "Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)",
+        
+        description: "We summary two ways to deduce quantization of magnetic charge, One adapted from Dirac&#39;s original idea, and another with gauge theory point of view.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/";
+          
+        },
+      },{id: "post-a-little-of-galois-theory-how-to-solve-equations-in-chinese",
+        
+          title: "A Little of Galois Theory-How to Solve Equations(In Chinese)",
+        
+        description: "A note on how to solve algebraic equations, following the idea of Galois. This is tending to advanced high school students with few knowledge of group theory and field extensions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/";
+          
+        },
+      },{id: "post-topological-proof-of-bézout-theorem",
+        
+          title: "Topological Proof of Bézout Theorem",
+        
+        description: "Provide a proof of Bézout&#39;s theorem (in the complex field), using intersection form of homology classes.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf";
+          
+        },
+      },{id: "post-non-existence-of-tensor-product-of-hilber-spaces",
+        
+          title: "Non-existence of Tensor Product of Hilber Spaces",
+        
+        description: "We give a proof of that there is no space satisfying the naive analogy of unversal property of the (algebraic) tensor product.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Non-existence%20of%20Tensor%20Product%20of%20Hilber%20Spaces.pdf";
+          
+        },
+      },{id: "post-function-on-surfaces-with-3-critical-points-in-chinese",
+        
+          title: "Function on Surfaces With 3 Critical Points(In Chinese)",
+        
+        description: "Provide some explanation for Banchoff&#39;s construction of functions on surfaces with 3 critical points.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Function-on-Surfaces-With-3-Critical-Points(In-Chinese)/";
+          
+        },
+      },{id: "post-an-application-of-the-uniform-boundedness-principle-on-the-continuity-of-lie-group-39-s-representations-in-chinese",
+        
+          title: "An Application of the Uniform Boundedness Principle - On the Continuity of Lie...",
+        
+        description: "Provide an application of the uniform boundedness principle that is not so &quot;analytic&quot;.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/An-Application-of-the-Uniform-Boundedness-Principle-On-the-Continuity-of-Lie-Group's-Representations(In-Chinese)/";
+          
+        },
+      },{id: "post-why-caring-about-space-of-connections-an-example-of-gauge-theories-in-chinese",
+        
+          title: "Why Caring About Space of Connections - An Example of Gauge Theories(In Chinese)...",
+        
+        description: "Try to explain why mathematicians&#39; gauge theory are interested in the set of all connections over a principal bundle,using the electromagnetic field as the simplest example.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82%E8%A7%A3%E8%81%94%E7%BB%9C.pdf";
+          
+        },
+      },{id: "post-first-integrals-of-hamiltonian-systems-and-reduction-of-dimension-in-chinese",
+        
+          title: "First Integrals of Hamiltonian Systems and Reduction of Dimension(In Chinese)",
+        
+        description: "A geometric way to reduce the dimension of a Hamiltonian system with a first integral, together with some explanation on proof of Darboux&#39;s theorem.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/First-Integrals-of-Hamiltonian-Systems-and-Reduction-of-Dimension(In-Chinese)/";
+          
+        },
+      },{id: "post-hofer-zehnder-capacity-and-proof-of-gromov-39-s-non-squeezing-theorem-in-chinese",
+        
+          title: "Hofer-Zehnder Capacity And Proof of Gromov&#39;s Non-squeezing Theorem(In Chinese)",
+        
+        description: "This note records a proof of Gromov&#39;s non-squeezing theorem, using the Hofer-Zehnder capacity. This proof mostly follows the one given by Hofer and Zehnder, except some slight modifications.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Hofer-Zehnder%E5%AE%B9%E9%87%8F%E4%B8%8EGromov%E4%B8%8D%E5%8F%AF%E5%8E%8B%E7%BC%A9%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.pdf";
+          
+        },
+      },{id: "post-bourgain-39-s-trick-from-boundedness-to-existence-in-chinese",
+        
+          title: "Bourgain&#39;s Trick-From Boundedness to Existence(In Chinese)",
+        
+        description: "This note records a trick in Bourgain&#39;s papers, which uses dual spaces and Hahn-Banach theorem to show existence of certain objects.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Bourgain's-Trick-From-Boundedness-to-Existence/";
+          
+        },
+      },{id: "post-a-collection-of-baker-campbell-hausdorff-type-formulas-in-chinese",
+        
+          title: "A Collection of Baker-Campbell-Hausdorff-Type formulas(In Chinese)",
+        
+        description: "A collection of formulas similar to Baker-Campbell-Hausdorff formula and their proofs (which are simpler than that of BCH formula).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/A-Collection-of-Baker-Campbell-Hausdorff-Type-Formulas/";
+          
+        },
+      },{id: "post-heat-equation-and-path-integral-from-stochastic-point-of-view-in-chinese",
+        
+          title: "Heat Equation and Path Integral From Stochastic Point of View(In Chinese)",
+        
+        description: "We show the relation between the Brownian motion and heat equation, and we give a path integral interpretation of a solution of heat equation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%83%AD%E6%96%B9%E7%A8%8B%E4%B8%8E%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86.pdf";
+          
+        },
+      },{id: "post-existence-of-almost-complex-structure-on-spheres-in-chinese",
+        
+          title: "Existence of Almost Complex Structure on Spheres(In Chinese)",
+        
+        description: "This note records the proof that there is no almost complex structure on sphere unless its dimension is 2 or 6.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E7%90%83%E9%9D%A2%E4%B8%8A%E8%BF%91%E5%A4%8D%E7%BB%93%E6%9E%84.pdf";
+          
+        },
+      },{id: "post-notes-on-feynman-integral-and-feynman-diagram-in-chinese",
+        
+          title: "Notes on Feynman Integral and Feynman Diagram(In Chinese)",
+        
+        description: "A note on the deductions of the path integral and the Feynman diagram.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Feynman%E7%A7%AF%E5%88%86%E5%92%8CFeynman%E5%9B%BE.pdf";
+          
+        },
+      },{id: "post-compact-lie-groups-as-boundaries-of-manifolds-in-chinese",
+        
+          title: "Compact Lie Groups as Boundaries of Manifolds(In Chinese)",
+        
+        description: "A constructive proof that every Lie group is the boundary of certain smooth manifold.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Compact-Lie-Groups-as-Boundaries-of-Manifolds/";
+          
+        },
+      },{id: "post-three-counterexamples-about-mayer-vietoris-sequence-in-chinese",
+        
+          title: "Three Counterexamples About Mayer-Vietoris Sequence(In Chinese)",
+        
+        description: "When certain conditions are removed, there are examples where the Mayer-Vietoris sequence does not hold, where the excision theorem does not hold and where the homology groups of a pair of spaces is not isomorphic to that of the quotient space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E5%85%B3%E4%BA%8EM-V%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8F%8D%E4%BE%8B.pdf";
+          
+        },
+      },{id: "post-notes-on-spectral-sequence-double-complex-derived-functor-and-universal-coefficient-theorem-in-chinese",
+        
+          title: "Notes on Spectral Sequence, Double Complex, Derived Functor and Universal Coefficient Theorem(In Chinese)...",
+        
+        description: "Prove some results related to derived functors and universal coefficient theorem using spectral sequences.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E8%B0%B1%E5%BA%8F%E5%88%97%E3%80%81%E5%8F%8C%E5%A4%8D%E5%BD%A2%E4%B8%8E%E5%AF%BC%E5%87%BA%E5%87%BD%E5%AD%90%E3%80%81%E4%B8%87%E6%9C%89%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86.pdf";
+          
+        },
+      },{id: "post-proof-of-the-hodge-decomposition-on-riemannian-manifolds-in-chinese",
+        
+          title: "Proof of the Hodge Decomposition on Riemannian Manifolds(In Chinese)",
+        
+        description: "This note records a proof of Hodge decomposition on Riemannian manifolds. We view the Laplacian as the square of a Dirac operator, which is unbounded and self-adjoint. And we prove the theorem by showing that its &quot;inverse&quot; is compact.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E9%BB%8E%E6%9B%BC%E6%B5%81%E5%BD%A2%E4%B8%8AHodge%E5%88%86%E8%A7%A3%E7%9A%84%E8%AF%81%E6%98%8E.pdf";
+          
+        },
+      },{id: "post-deduction-of-morse-inequality-perfect-morse-function-and-decomposition-into-derict-sum-in-chinese",
+        
+          title: "Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese)...",
+        
+        description: "Some notes when learning Morse theory for the second time.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Deduction-of-Morse-Inequality-Perfect-Morse-Function-and-Decomposition-into-Derict-Sum/";
+          
+        },
+      },{id: "post-simplex-decomposition-of-product-of-singular-simplexes-in-chinese",
+        
+          title: "Simplex Decomposition of Product of Singular Simplexes(In Chinese)",
+        
+        description: "Construct a concrete simplex decomposition of product of singular simplexes with an intuitive proof.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Simplex-Decomposition-of-Product-of-Singular-Simplexes/";
+          
+        },
+      },{id: "post-three-ways-to-think-of-connections-on-vector-bundles-in-chinese",
+        
+          title: "Three Ways to Think of Connections on Vector Bundles(In Chinese)",
+        
+        description: "To record three usual ways to think of connections on vecter bundles.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Three-Ways-to-Think-of-Connections-on-Vector-Bundles/";
+          
+        },
+      },{id: "post-bounded-operators-can-not-satisfy-canonical-commutative-relation-in-chinese",
+        
+          title: "Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese)",
+        
+        description: "The proof of the fact that two bounded operators can not satisfy the C.C.R.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Bounded-Operators-Can-Not-Satisfy-Canonical-Commutative-Relation/";
+          
+        },
+      },{id: "post-initiation-to-convergence-theory-in-chinese",
+        
+          title: "Initiation to Convergence Theory(In Chinese)",
+        
+        description: "A very brief introduction to notions in convergence theory.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Initiation-to-Convergence-Theory/";
+          
+        },
+      },{id: "post-comments-on-coalgebra",
+        
+          title: "Comments on Coalgebra",
+        
+        description: "Provide some motivations and examples for the coalgebra.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Comments-on-Coalgebra/";
+          
+        },
+      },{id: "post-quot-odd-dimensional-quot-approach-to-hamiltonian-phase-flow",
+        
+          title: "&quot;Odd-dimensional&quot; Approach to Hamiltonian Phase Flow",
+        
+        description: "This is a short note on the chapter 9 in the book Mathematical Methods of Classical Mechanics by Arnold.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Odd-dimensional-Approach-to-Hamiltonian-Phase-Flow/";
+          
+        },
+      },{id: "teaching-advanced-mathematics-a-i",
+          title: 'Advanced Mathematics A(I)',
+          description: "From Sept. 2024 to Dec. 2024(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2024-autumn-Advanced-Mathematics-A-I/";
+            },},{id: "teaching-advanced-mathematics-a-ii",
+          title: 'Advanced Mathematics A(II)',
+          description: "From Feb. 2025 to Jun. 2025(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2025-spring-Advanced-Mathematics-A-II/";
+            },},{id: "teaching-advanced-mathematics-a-ii",
+          title: 'Advanced Mathematics A(II)',
+          description: "From Mar. 2026 to Jun. 2026(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2026-spring-Advanced-Mathematics-A-II/";
+            },},{id: "teaching-advanced-mathematics-a-i",
+          title: 'Advanced Mathematics A(I)',
+          description: "From Sept. 2026 to Dec. 2026(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2026-autumn-Advanced-Mathematics-A-I-copy/";
+            },},{id: "teaching-lecture-note-for-recitation-session",
+          title: 'Lecture Note for Recitation Session',
+          description: "Collection of my lecture note for the recitation session of the course Advanced Mathematics.",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/Lecture-Note-for-Recitation-Session/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%68%61%6E%68%61%6E%63%79%7A@%73%74%75.%70%6B%75.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/Yizhao-Chen-math", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

@@ -1,5 +1,417 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese) | Yizhao Chen 陈轶钊 </title> <meta name="author" content="Yizhao Chen 陈轶钊"> <meta name="description" content="The proof of the fact that two bounded operators can not satisfy the C.C.R."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?e89634aa8709fb03c8ab187827e04de4"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://yi-zhao-chen.github.io/blog/2024/Bounded-Operators-Can-Not-Satisfy-Canonical-Commutative-Relation/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese) | Yizhao Chen 陈轶钊 </title> <meta name="author" content="Yizhao Chen 陈轶钊"> <meta name="description" content="The proof of the fact that two bounded operators can not satisfy the C.C.R."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/icon.png?v=e89634aa8709fb03c8ab187827e04de4"> <link rel="apple-touch-icon" href="/assets/img/icon.png?v=e89634aa8709fb03c8ab187827e04de4"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://yizhao-chen-math.github.io/blog/2024/Bounded-Operators-Can-Not-Satisfy-Canonical-Commutative-Relation/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yizhao Chen</span> 陈轶钊 </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications&amp;preprints/">Publications &amp; Preprints </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link"> <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese)</h1> <p class="post-meta"> Created in June 11, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> Notes</a> </p> </header> <article class="post-content"> <div id="table-of-contents"> <ul id="toc" class="section-nav"> <li class="toc-entry toc-h2"><a href="#%E4%B8%80%E7%82%B9%E8%83%8C%E6%99%AF%E9%87%8F%E5%AD%90%E5%8C%96">一点背景：量子化</a></li> <li class="toc-entry toc-h2"><a href="#%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E">定理的证明</a></li> <li class="toc-entry toc-h2"><a href="#%E4%B8%80%E4%BA%9B%E8%A1%A5%E5%85%85">一些补充</a></li> </ul> </div> <hr> <div id="markdown-content"> <p>这篇的目的是记录下面的定理和它的证明：</p> <blockquote> <p><strong>定理</strong>：设\(P, Q\)是Hilbert空间\(\mathscr{H}\)上的算子，且满足</p> \[PQ - QP = i \cdot \mathrm{id}_{\mathscr{H}}\] <p>那么\(P, Q\)中至少有一个是无界算子。</p> </blockquote> <h2 id="一点背景量子化">一点背景：量子化</h2> <p>一种解释<a href="https://en.wikipedia.org/wiki/Canonical_quantization" rel="external nofollow noopener" target="_blank">量子化</a>的方式是，人们希望建立量子力学和经典力学之间的联系，而建立的办法就是，直接给出通常的物理量和量子力学中的物理量（也就是某个Hilbert空间\(\mathscr{H}\)上的算子）的对应关系。用稍微数学一些的话来说，我们期望找到一个映射：</p> \[\begin{matrix} \mathscr{Q}: &amp; \{\text{物理量}\} &amp; \longrightarrow &amp; \{\mathscr{H}\text{上算子}\} \\ &amp; u &amp; \longmapsto &amp; \hat{u}: \mathscr{H} \rightarrow \mathscr{H} \end{matrix}\] <p>更进一步，我们希望这个映射能够保持一些运算，使得我们可以从经典力学的方程直接得到量子力学的方程。比如，我们希望：</p> <ul> <li>\(\mathscr{Q}\)是实线性的。</li> <li>\([\hat{u}, \hat{v}] = i \hbar \widehat{\{u, v\}}\) 这里\([\hat{u}, \hat{v}]:=\hat{u}\hat{v}-\hat{v}\hat{u}\)被叫做对易子或者交换子，\(\{\cdot, \cdot\}\)是哈密顿力学里的<a href="https://en.wikipedia.org/wiki/Poisson_bracket" rel="external nofollow noopener" target="_blank">Poisson括号</a>。</li> </ul> <p>举个例子，在一维的系统里，我们考虑位置\(x\)和动量\(p\)量子化。我们已经知道：</p> \[\{x, p\} = 1\] <p>因此，\(x\)和\(p\)的量子化\(\hat{x}, \hat{p}\)必须满足：</p> \[[\hat{x}, \hat{p}] = i\hbar \cdot \mathrm{id}_{\mathscr{H}}\] <p>这个等式就被叫做典则交换关系(canonical commutation relation, C.C.R.)。因为数学上，可以将\(\hbar\)吸收到\(\hat{x}, \hat{p}\)中，所以这篇文章里也将等式\(PQ-QP = i \cdot \mathrm{id}_{\mathscr{H}}\)称作C.C.R.。</p> <h2 id="定理的证明">定理的证明</h2> <p>这个定理的证明并不复杂。办法是使用反证法，假设存在两个有界算子\(P,Q\)满足C.C.R.。那么我们有这样的观察：</p> <ul> <li>如果\(P, Q\)满足C.C.R.，那么\(c \cdot \mathrm{id}_{\mathscr{H}}+P\)和\(Q\)也满足C.C.R.。</li> </ul> <p>所以我们可以取充分大的常数\(c\)，使得\(P\)是可逆的。为了方便，我们记\(R = QP\)，那么我们的C.C.R.就变成了</p> \[P R P^{-1} = R + i \cdot \mathrm{id}_{\mathscr{H}}\] <p>考虑两边算子的谱可以知道：</p> \[\sigma(R) = \sigma(PRP^{-1}) = \sigma(R) + i\] <p>这意味着，如果\(\lambda\)是\(R\)的一个谱点，那么\(\lambda + i\)也是\(R\)的谱点。所以利用归纳法可以知道，对任意的正整数\(n\)，\(\lambda + ni\)是\(R\)的谱，这样\(R\)的谱\(\sigma(R)\)一定无界。</p> <p>但由\(R = QP\)和\(P,Q\)是有界算子马上知道，\(R\)是有界算子，进而\(\sigma(R)\)必须是有界集。这样我们就得到了矛盾。</p> <h2 id="一些补充">一些补充</h2> <p>可以认为这个定理提供了研究无界算子的一个动机：量子力学必须要使用无界算子来描述物理量。</p> <p>另外注意到有限维空间上的线性算子一定是有界的，所以从这个定理可以得到下面的推论：</p> <blockquote> <p><strong>推论</strong>：如果线性空间\(V\)上的算子\(P, Q\)满足C.C.R.，那么\(V\)一定是一个无穷维（赋范）线性空间。</p> </blockquote> <p>可以认为这个推论解释了为什么量子力学需要引入Hilbert空间。</p> <p>此外，在算子\(P, Q\)无界的时候，是有可能满足C.C.R.的，比如取\(\mathscr{H} = \mathcal{L}^2(\mathbb{R})\)，再取</p> \[\begin{aligned} \big(P\psi\big)(x) &amp; = -i\frac{\mathrm{d}}{\mathrm{d}x}\psi(x) \\ \big(Q\psi\big)(x) &amp; = x \cdot \psi(x) \end{aligned}\] <p>这时候\(P, Q\)形式上满足C.C.R.。</p> <p>这里使用了“形式上”三个字是因为，无界算子的C.C.R.不能直接理解成通常的交换子。严格来说，无界算子的C.C.R.要靠有界算子\(e^{iP}, e^{iQ}\)的交换性来定义。这时候，C.C.R.被表述为所谓的<a href="https://en.wikipedia.org/wiki/Canonical_commutation_relation#Weyl_relations" rel="external nofollow noopener" target="_blank">Weyl关系(Weyl relations)</a>。</p> </div> </article> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf">Writing Operators as Sum of Commutators</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/Spin-Representation-and-Fermions/">Spin Representation and Fermions(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/">Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/">A Little of Galois Theory-How to Solve Equations(In Chinese)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf">Topological Proof of Bézout Theorem</a> </li> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yizhao Chen 陈轶钊. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: October 13, 2026. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Yizhao Chen</span> 陈轶钊 </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications&amp;preprints/">Publications &amp; Preprints </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese)</h1> <p class="post-meta"> Created on June 11, 2024 </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> Notes</a> </p> </header> <article class="post-content"> <div id="table-of-contents"> <ul id="toc" class="section-nav"> <li class="toc-entry toc-h2"><a href="#%E4%B8%80%E7%82%B9%E8%83%8C%E6%99%AF%E9%87%8F%E5%AD%90%E5%8C%96">一点背景：量子化</a></li> <li class="toc-entry toc-h2"><a href="#%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E">定理的证明</a></li> <li class="toc-entry toc-h2"><a href="#%E4%B8%80%E4%BA%9B%E8%A1%A5%E5%85%85">一些补充</a></li> </ul> </div> <hr> <div id="markdown-content"> <p>这篇的目的是记录下面的定理和它的证明：</p> <blockquote> <p><strong>定理</strong>：设\(P, Q\)是Hilbert空间\(\mathscr{H}\)上的算子，且满足</p> \[PQ - QP = i \cdot \mathrm{id}_{\mathscr{H}}\] <p>那么\(P, Q\)中至少有一个是无界算子。</p> </blockquote> <h2 id="一点背景量子化">一点背景：量子化</h2> <p>一种解释<a href="https://en.wikipedia.org/wiki/Canonical_quantization" rel="external nofollow noopener" target="_blank">量子化</a>的方式是，人们希望建立量子力学和经典力学之间的联系，而建立的办法就是，直接给出通常的物理量和量子力学中的物理量（也就是某个Hilbert空间\(\mathscr{H}\)上的算子）的对应关系。用稍微数学一些的话来说，我们期望找到一个映射：</p> \[\begin{matrix} \mathscr{Q}: &amp; \{\text{物理量}\} &amp; \longrightarrow &amp; \{\mathscr{H}\text{上算子}\} \\ &amp; u &amp; \longmapsto &amp; \hat{u}: \mathscr{H} \rightarrow \mathscr{H} \end{matrix}\] <p>更进一步，我们希望这个映射能够保持一些运算，使得我们可以从经典力学的方程直接得到量子力学的方程。比如，我们希望：</p> <ul> <li>\(\mathscr{Q}\)是实线性的。</li> <li>\([\hat{u}, \hat{v}] = i \hbar \widehat{\{u, v\}}\) 这里\([\hat{u}, \hat{v}]:=\hat{u}\hat{v}-\hat{v}\hat{u}\)被叫做对易子或者交换子，\(\{\cdot, \cdot\}\)是哈密顿力学里的<a href="https://en.wikipedia.org/wiki/Poisson_bracket" rel="external nofollow noopener" target="_blank">Poisson括号</a>。</li> </ul> <p>举个例子，在一维的系统里，我们考虑位置\(x\)和动量\(p\)量子化。我们已经知道：</p> \[\{x, p\} = 1\] <p>因此，\(x\)和\(p\)的量子化\(\hat{x}, \hat{p}\)必须满足：</p> \[[\hat{x}, \hat{p}] = i\hbar \cdot \mathrm{id}_{\mathscr{H}}\] <p>这个等式就被叫做典则交换关系(canonical commutation relation, C.C.R.)。因为数学上，可以将\(\hbar\)吸收到\(\hat{x}, \hat{p}\)中，所以这篇文章里也将等式\(PQ-QP = i \cdot \mathrm{id}_{\mathscr{H}}\)称作C.C.R.。</p> <h2 id="定理的证明">定理的证明</h2> <p>这个定理的证明并不复杂。办法是使用反证法，假设存在两个有界算子\(P,Q\)满足C.C.R.。那么我们有这样的观察：</p> <ul> <li>如果\(P, Q\)满足C.C.R.，那么\(c \cdot \mathrm{id}_{\mathscr{H}}+P\)和\(Q\)也满足C.C.R.。</li> </ul> <p>所以我们可以取充分大的常数\(c\)，使得\(P\)是可逆的。为了方便，我们记\(R = QP\)，那么我们的C.C.R.就变成了</p> \[P R P^{-1} = R + i \cdot \mathrm{id}_{\mathscr{H}}\] <p>考虑两边算子的谱可以知道：</p> \[\sigma(R) = \sigma(PRP^{-1}) = \sigma(R) + i\] <p>这意味着，如果\(\lambda\)是\(R\)的一个谱点，那么\(\lambda + i\)也是\(R\)的谱点。所以利用归纳法可以知道，对任意的正整数\(n\)，\(\lambda + ni\)是\(R\)的谱，这样\(R\)的谱\(\sigma(R)\)一定无界。</p> <p>但由\(R = QP\)和\(P,Q\)是有界算子马上知道，\(R\)是有界算子，进而\(\sigma(R)\)必须是有界集。这样我们就得到了矛盾。</p> <h2 id="一些补充">一些补充</h2> <p>可以认为这个定理提供了研究无界算子的一个动机：量子力学必须要使用无界算子来描述物理量。</p> <p>另外注意到有限维空间上的线性算子一定是有界的，所以从这个定理可以得到下面的推论：</p> <blockquote> <p><strong>推论</strong>：如果线性空间\(V\)上的算子\(P, Q\)满足C.C.R.，那么\(V\)一定是一个无穷维（赋范）线性空间。</p> </blockquote> <p>可以认为这个推论解释了为什么量子力学需要引入Hilbert空间。</p> <p>此外，在算子\(P, Q\)无界的时候，是有可能满足C.C.R.的，比如取\(\mathscr{H} = \mathcal{L}^2(\mathbb{R})\)，再取</p> \[\begin{aligned} \big(P\psi\big)(x) &amp; = -i\frac{\mathrm{d}}{\mathrm{d}x}\psi(x) \\ \big(Q\psi\big)(x) &amp; = x \cdot \psi(x) \end{aligned}\] <p>这时候\(P, Q\)形式上满足C.C.R.。</p> <p>这里使用了“形式上”三个字是因为，无界算子的C.C.R.不能直接理解成通常的交换子。严格来说，无界算子的C.C.R.要靠有界算子\(e^{iP}, e^{iQ}\)的交换性来定义。这时候，C.C.R.被表述为所谓的<a href="https://en.wikipedia.org/wiki/Canonical_commutation_relation#Weyl_relations" rel="external nofollow noopener" target="_blank">Weyl关系(Weyl relations)</a>。</p> </div> </article> <br> <hr> <br> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <ul class="list-disc pl-7 my-3 space-y-2 marker:text-[var(--global-theme-color)]"> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf">Writing Operators as Sum of Commutators</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/Spin-Representation-and-Fermions/">Spin Representation and Fermions(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/">Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/">A Little of Galois Theory-How to Solve Equations(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf">Topological Proof of Bézout Theorem</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/Non-existence%20of%20Tensor%20Product%20of%20Hilber%20Spaces.pdf">Non-existence of Tensor Product of Hilber Spaces</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/Function-on-Surfaces-With-3-Critical-Points(In-Chinese)/">Function on Surfaces With 3 Critical Points(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/An-Application-of-the-Uniform-Boundedness-Principle-On-the-Continuity-of-Lie-Group's-Representations(In-Chinese)/">An Application of the Uniform Boundedness Principle - On the Continuity of Lie Group's Representations(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/assets/pdf/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82%E8%A7%A3%E8%81%94%E7%BB%9C.pdf">Why Caring About Space of Connections - An Example of Gauge Theories(In Chinese)</a> </li> <li class="leading-relaxed"> <a class="underline decoration-1 hover:text-[var(--global-hover-color)]" href="/blog/2025/First-Integrals-of-Hamiltonian-Systems-and-Reduction-of-Dimension(In-Chinese)/">First Integrals of Hamiltonian Systems and Reduction of Dimension(In Chinese)</a> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yizhao Chen 陈轶钊. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Last updated: November 04, 2026. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
-  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-publications-amp-preprints",
+          title: "Publications &amp; Preprints",
+          description: "My publications and preprints are listed below.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications&preprints/";
+          },
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "The following are the courses which I taught or in which I served as a teaching assistant.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "post-writing-operators-as-sum-of-commutators",
+        
+          title: "Writing Operators as Sum of Commutators",
+        
+        description: "A review on Anderson and Vaserstein&#39;s paper.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Writing%20Operators%20as%20Sum%20of%20Commutators.pdf";
+          
+        },
+      },{id: "post-spin-representation-and-fermions-in-chinese",
+        
+          title: "Spin Representation and Fermions(In Chinese)",
+        
+        description: "We describe a case where the irreducible representation of Clifford algebras &quot;naturally&quot; appear - the creation and annihilation operators acting on the space of quantum states of many-fermion system.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Spin-Representation-and-Fermions/";
+          
+        },
+      },{id: "post-magnetic-monopole-and-quantization-of-magnetic-charge-in-chinese",
+        
+          title: "Magnetic Monopole and Quantization of Magnetic Charge(In Chinese)",
+        
+        description: "We summary two ways to deduce quantization of magnetic charge, One adapted from Dirac&#39;s original idea, and another with gauge theory point of view.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Magnetic-Monopole-and-Quantization-of-Magnetic-Charge(In-Chinese)/";
+          
+        },
+      },{id: "post-a-little-of-galois-theory-how-to-solve-equations-in-chinese",
+        
+          title: "A Little of Galois Theory-How to Solve Equations(In Chinese)",
+        
+        description: "A note on how to solve algebraic equations, following the idea of Galois. This is tending to advanced high school students with few knowledge of group theory and field extensions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/A-Little-of-Galois-Theory-How-to-Solve-Equations(in-Chinese)/";
+          
+        },
+      },{id: "post-topological-proof-of-bézout-theorem",
+        
+          title: "Topological Proof of Bézout Theorem",
+        
+        description: "Provide a proof of Bézout&#39;s theorem (in the complex field), using intersection form of homology classes.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Topological%20Proof%20of%20Bezout%20Theorem.pdf";
+          
+        },
+      },{id: "post-non-existence-of-tensor-product-of-hilber-spaces",
+        
+          title: "Non-existence of Tensor Product of Hilber Spaces",
+        
+        description: "We give a proof of that there is no space satisfying the naive analogy of unversal property of the (algebraic) tensor product.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Non-existence%20of%20Tensor%20Product%20of%20Hilber%20Spaces.pdf";
+          
+        },
+      },{id: "post-function-on-surfaces-with-3-critical-points-in-chinese",
+        
+          title: "Function on Surfaces With 3 Critical Points(In Chinese)",
+        
+        description: "Provide some explanation for Banchoff&#39;s construction of functions on surfaces with 3 critical points.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Function-on-Surfaces-With-3-Critical-Points(In-Chinese)/";
+          
+        },
+      },{id: "post-an-application-of-the-uniform-boundedness-principle-on-the-continuity-of-lie-group-39-s-representations-in-chinese",
+        
+          title: "An Application of the Uniform Boundedness Principle - On the Continuity of Lie...",
+        
+        description: "Provide an application of the uniform boundedness principle that is not so &quot;analytic&quot;.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/An-Application-of-the-Uniform-Boundedness-Principle-On-the-Continuity-of-Lie-Group's-Representations(In-Chinese)/";
+          
+        },
+      },{id: "post-why-caring-about-space-of-connections-an-example-of-gauge-theories-in-chinese",
+        
+          title: "Why Caring About Space of Connections - An Example of Gauge Theories(In Chinese)...",
+        
+        description: "Try to explain why mathematicians&#39; gauge theory are interested in the set of all connections over a principal bundle,using the electromagnetic field as the simplest example.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B1%82%E8%A7%A3%E8%81%94%E7%BB%9C.pdf";
+          
+        },
+      },{id: "post-first-integrals-of-hamiltonian-systems-and-reduction-of-dimension-in-chinese",
+        
+          title: "First Integrals of Hamiltonian Systems and Reduction of Dimension(In Chinese)",
+        
+        description: "A geometric way to reduce the dimension of a Hamiltonian system with a first integral, together with some explanation on proof of Darboux&#39;s theorem.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/First-Integrals-of-Hamiltonian-Systems-and-Reduction-of-Dimension(In-Chinese)/";
+          
+        },
+      },{id: "post-hofer-zehnder-capacity-and-proof-of-gromov-39-s-non-squeezing-theorem-in-chinese",
+        
+          title: "Hofer-Zehnder Capacity And Proof of Gromov&#39;s Non-squeezing Theorem(In Chinese)",
+        
+        description: "This note records a proof of Gromov&#39;s non-squeezing theorem, using the Hofer-Zehnder capacity. This proof mostly follows the one given by Hofer and Zehnder, except some slight modifications.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Hofer-Zehnder%E5%AE%B9%E9%87%8F%E4%B8%8EGromov%E4%B8%8D%E5%8F%AF%E5%8E%8B%E7%BC%A9%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.pdf";
+          
+        },
+      },{id: "post-bourgain-39-s-trick-from-boundedness-to-existence-in-chinese",
+        
+          title: "Bourgain&#39;s Trick-From Boundedness to Existence(In Chinese)",
+        
+        description: "This note records a trick in Bourgain&#39;s papers, which uses dual spaces and Hahn-Banach theorem to show existence of certain objects.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Bourgain's-Trick-From-Boundedness-to-Existence/";
+          
+        },
+      },{id: "post-a-collection-of-baker-campbell-hausdorff-type-formulas-in-chinese",
+        
+          title: "A Collection of Baker-Campbell-Hausdorff-Type formulas(In Chinese)",
+        
+        description: "A collection of formulas similar to Baker-Campbell-Hausdorff formula and their proofs (which are simpler than that of BCH formula).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/A-Collection-of-Baker-Campbell-Hausdorff-Type-Formulas/";
+          
+        },
+      },{id: "post-heat-equation-and-path-integral-from-stochastic-point-of-view-in-chinese",
+        
+          title: "Heat Equation and Path Integral From Stochastic Point of View(In Chinese)",
+        
+        description: "We show the relation between the Brownian motion and heat equation, and we give a path integral interpretation of a solution of heat equation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E7%83%AD%E6%96%B9%E7%A8%8B%E4%B8%8E%E8%B7%AF%E5%BE%84%E7%A7%AF%E5%88%86.pdf";
+          
+        },
+      },{id: "post-existence-of-almost-complex-structure-on-spheres-in-chinese",
+        
+          title: "Existence of Almost Complex Structure on Spheres(In Chinese)",
+        
+        description: "This note records the proof that there is no almost complex structure on sphere unless its dimension is 2 or 6.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E7%90%83%E9%9D%A2%E4%B8%8A%E8%BF%91%E5%A4%8D%E7%BB%93%E6%9E%84.pdf";
+          
+        },
+      },{id: "post-notes-on-feynman-integral-and-feynman-diagram-in-chinese",
+        
+          title: "Notes on Feynman Integral and Feynman Diagram(In Chinese)",
+        
+        description: "A note on the deductions of the path integral and the Feynman diagram.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/Feynman%E7%A7%AF%E5%88%86%E5%92%8CFeynman%E5%9B%BE.pdf";
+          
+        },
+      },{id: "post-compact-lie-groups-as-boundaries-of-manifolds-in-chinese",
+        
+          title: "Compact Lie Groups as Boundaries of Manifolds(In Chinese)",
+        
+        description: "A constructive proof that every Lie group is the boundary of certain smooth manifold.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Compact-Lie-Groups-as-Boundaries-of-Manifolds/";
+          
+        },
+      },{id: "post-three-counterexamples-about-mayer-vietoris-sequence-in-chinese",
+        
+          title: "Three Counterexamples About Mayer-Vietoris Sequence(In Chinese)",
+        
+        description: "When certain conditions are removed, there are examples where the Mayer-Vietoris sequence does not hold, where the excision theorem does not hold and where the homology groups of a pair of spaces is not isomorphic to that of the quotient space.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E5%85%B3%E4%BA%8EM-V%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%89%E4%B8%AA%E5%8F%8D%E4%BE%8B.pdf";
+          
+        },
+      },{id: "post-notes-on-spectral-sequence-double-complex-derived-functor-and-universal-coefficient-theorem-in-chinese",
+        
+          title: "Notes on Spectral Sequence, Double Complex, Derived Functor and Universal Coefficient Theorem(In Chinese)...",
+        
+        description: "Prove some results related to derived functors and universal coefficient theorem using spectral sequences.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E8%B0%B1%E5%BA%8F%E5%88%97%E3%80%81%E5%8F%8C%E5%A4%8D%E5%BD%A2%E4%B8%8E%E5%AF%BC%E5%87%BA%E5%87%BD%E5%AD%90%E3%80%81%E4%B8%87%E6%9C%89%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86.pdf";
+          
+        },
+      },{id: "post-proof-of-the-hodge-decomposition-on-riemannian-manifolds-in-chinese",
+        
+          title: "Proof of the Hodge Decomposition on Riemannian Manifolds(In Chinese)",
+        
+        description: "This note records a proof of Hodge decomposition on Riemannian manifolds. We view the Laplacian as the square of a Dirac operator, which is unbounded and self-adjoint. And we prove the theorem by showing that its &quot;inverse&quot; is compact.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/assets/pdf/posts/%E9%BB%8E%E6%9B%BC%E6%B5%81%E5%BD%A2%E4%B8%8AHodge%E5%88%86%E8%A7%A3%E7%9A%84%E8%AF%81%E6%98%8E.pdf";
+          
+        },
+      },{id: "post-deduction-of-morse-inequality-perfect-morse-function-and-decomposition-into-derict-sum-in-chinese",
+        
+          title: "Deduction of Morse Inequality, Perfect Morse Function and Decomposition into Derict Sum(In Chinese)...",
+        
+        description: "Some notes when learning Morse theory for the second time.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Deduction-of-Morse-Inequality-Perfect-Morse-Function-and-Decomposition-into-Derict-Sum/";
+          
+        },
+      },{id: "post-simplex-decomposition-of-product-of-singular-simplexes-in-chinese",
+        
+          title: "Simplex Decomposition of Product of Singular Simplexes(In Chinese)",
+        
+        description: "Construct a concrete simplex decomposition of product of singular simplexes with an intuitive proof.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Simplex-Decomposition-of-Product-of-Singular-Simplexes/";
+          
+        },
+      },{id: "post-three-ways-to-think-of-connections-on-vector-bundles-in-chinese",
+        
+          title: "Three Ways to Think of Connections on Vector Bundles(In Chinese)",
+        
+        description: "To record three usual ways to think of connections on vecter bundles.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Three-Ways-to-Think-of-Connections-on-Vector-Bundles/";
+          
+        },
+      },{id: "post-bounded-operators-can-not-satisfy-canonical-commutative-relation-in-chinese",
+        
+          title: "Bounded Operators Can Not Satisfy Canonical Commutative Relation(In Chinese)",
+        
+        description: "The proof of the fact that two bounded operators can not satisfy the C.C.R.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Bounded-Operators-Can-Not-Satisfy-Canonical-Commutative-Relation/";
+          
+        },
+      },{id: "post-initiation-to-convergence-theory-in-chinese",
+        
+          title: "Initiation to Convergence Theory(In Chinese)",
+        
+        description: "A very brief introduction to notions in convergence theory.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Initiation-to-Convergence-Theory/";
+          
+        },
+      },{id: "post-comments-on-coalgebra",
+        
+          title: "Comments on Coalgebra",
+        
+        description: "Provide some motivations and examples for the coalgebra.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Comments-on-Coalgebra/";
+          
+        },
+      },{id: "post-quot-odd-dimensional-quot-approach-to-hamiltonian-phase-flow",
+        
+          title: "&quot;Odd-dimensional&quot; Approach to Hamiltonian Phase Flow",
+        
+        description: "This is a short note on the chapter 9 in the book Mathematical Methods of Classical Mechanics by Arnold.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/Odd-dimensional-Approach-to-Hamiltonian-Phase-Flow/";
+          
+        },
+      },{id: "teaching-advanced-mathematics-a-i",
+          title: 'Advanced Mathematics A(I)',
+          description: "From Sept. 2024 to Dec. 2024(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2024-autumn-Advanced-Mathematics-A-I/";
+            },},{id: "teaching-advanced-mathematics-a-ii",
+          title: 'Advanced Mathematics A(II)',
+          description: "From Feb. 2025 to Jun. 2025(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2025-spring-Advanced-Mathematics-A-II/";
+            },},{id: "teaching-advanced-mathematics-a-ii",
+          title: 'Advanced Mathematics A(II)',
+          description: "From Mar. 2026 to Jun. 2026(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2026-spring-Advanced-Mathematics-A-II/";
+            },},{id: "teaching-advanced-mathematics-a-i",
+          title: 'Advanced Mathematics A(I)',
+          description: "From Sept. 2026 to Dec. 2026(as teaching assistant)",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/2026-autumn-Advanced-Mathematics-A-I-copy/";
+            },},{id: "teaching-lecture-note-for-recitation-session",
+          title: 'Lecture Note for Recitation Session',
+          description: "Collection of my lecture note for the recitation session of the course Advanced Mathematics.",
+          section: "Teaching",handler: () => {
+              window.location.href = "/teaching/Lecture-Note-for-Recitation-Session/";
+            },},{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%68%61%6E%68%61%6E%63%79%7A@%73%74%75.%70%6B%75.%65%64%75.%63%6E", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/Yizhao-Chen-math", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
